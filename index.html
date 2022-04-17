@@ -1,0 +1,27 @@
+<style>
+  body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+  }
+  textarea {
+    max-width: 100%;
+  }
+</style>
+
+<h1>Privnote</h1>
+<h2>New note</h2>
+
+<form method="post">
+  <label>
+    <textarea
+      name="note"
+      placeholder="Write your note here..."
+      rows="10"
+      cols="100"
+      required
+    ></textarea>
+  </label>
+  <br />
+  <br />
+  <input type="submit" value="Create note" />
+</form>
