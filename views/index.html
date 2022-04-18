@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  {% if message %}
+    <p>{{ message }}</p>
+  {% elif note %}
+    {% include "blocks/note.html" %}
+  {% elif noteUrl %}
+    {% include "blocks/created.html" %}
+  {% else %}
+    {% include "blocks/new.html" %}
+  {% endif %}
+{% endblock %}
