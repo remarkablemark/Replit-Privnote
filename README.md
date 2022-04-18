@@ -4,7 +4,13 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/remarkablemark/Replit-Privnote)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-[Replit Privnote](https://replit.com/@remarkablemark/Privnote).
+[Replit Privnote](https://replit.com/@remarkablemark/Privnote) built with:
+
+- [Express](https://expressjs.com/)
+- [Replit Database](https://github.com/replit/database-node)
+- [Crypto-JS](https://github.com/brix/crypto-js)
+
+Inspired by [Privnote](https://privnote.com/).
 
 ## Prerequisites
 
