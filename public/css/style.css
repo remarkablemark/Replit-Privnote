@@ -1,0 +1,8 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 50px;
+}
+
+textarea {
+  max-width: 100%;
+}

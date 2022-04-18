@@ -7,6 +7,7 @@ const { idRegex, nanoid } = require('./id');
 
 const app = express();
 app.use(morgan('dev'));
+app.use(express.static('public'));
 
 nunjucks.configure('views', {
   autoescape: true,
