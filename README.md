@@ -1,6 +1,6 @@
 # Replit Privnote
 
-[![Run on Replit](https://replit.com/badge/github/remarkablemark/Replit-Privnote)](https://replit.com/github/remarkablemark/Privnote)
+[![Run on Replit](https://replit.com/badge/github/remarkablemark/Replit-Privnote)](https://replit.com/github/remarkablemark/Replit-Privnote)
 ![GitHub last commit](https://img.shields.io/github/last-commit/remarkablemark/Replit-Privnote)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
