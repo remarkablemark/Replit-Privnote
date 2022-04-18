@@ -6,4 +6,35 @@
   </strong>
 </p>
 
-<textarea autofocus readonly>{{ note }}</textarea>
+<p>
+  <textarea autofocus hidden readonly rows="10" cols="100">{{ note }}</textarea>
+</p>
+
+<p>
+  <button>Copy text</button>
+</p>
+
+{% include "../includes/crypto-js.html" %}
+
+<script>
+  const textarea = document.querySelector('textarea');
+  const button = document.querySelector('button');
+  const secret = window.location.hash.slice(1);
+
+  if (secret) {
+    const bytes = CryptoJS.AES.decrypt(textarea.value, secret);
+    const decryptedNote = bytes.toString(CryptoJS.enc.Utf8);
+    textarea.value = decryptedNote;
+    textarea.hidden = false;
+    textarea.focus();
+  } else {
+    textarea.value = '';
+  }
+
+  textarea.innerHTML = '';
+
+  button.addEventListener('click', () => {
+    textarea.select();
+    document.execCommand('copy');
+  });
+</script>

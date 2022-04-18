@@ -1,16 +1,48 @@
 <h2>New note</h2>
 
 <form method="post">
-  <label>
+  <p>
     <textarea
-      name="note"
       placeholder="Write your note here..."
       rows="10"
       cols="100"
       required
     ></textarea>
-  </label>
-  <br />
-  <br />
-  <input type="submit" value="Create note" />
+  </p>
+
+  <input type="hidden" name="note">
+
+  <p>
+    <input type="submit" value="Create note">
+  </p>
 </form>
+
+{% include "../includes/crypto-js.html" %}
+
+<script>
+  function randomCase(string) {
+    return string
+      .split('')
+      .map((letter) => (Math.random() > 0.5 ? letter.toUpperCase() : letter))
+      .join('');
+  }
+
+  function generateSecret() {
+    return randomCase((Math.random() * 1e18).toString(36));
+  }
+
+  const form = document.querySelector('form');
+  const textarea = document.querySelector('textarea');
+  const input = document.querySelector('input[name="note"]');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const secret = generateSecret();
+    const ciphertext = CryptoJS.AES.encrypt(textarea.value, secret);
+
+    sessionStorage.setItem('secret', secret);
+    input.value = ciphertext;
+    form.submit();
+  });
+</script>

@@ -1,11 +1,46 @@
 <h2>Note link ready</h2>
 
 <p>
-  <a href="{{ noteId }}" rel="noopener noreferrer" target="_blank">
-    {{ noteUrl }}
-  </a>
+  <mark>
+    <a
+      id="noteLink"
+      href="{{ noteId }}"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      {{ noteUrl }}
+    </a>
+  </mark>
+
+  <textarea class="hidden"></textarea>
+</p>
+
+<p>
+  <button>Copy link</button>
 </p>
 
 <p>
   <em>The note will self-destruct after reading it.</em>
 </p>
+
+{% include "../includes/crypto-js.html" %}
+
+<script>
+  const noteLink = document.getElementById('noteLink');
+  const button = document.querySelector('button');
+  const textarea = document.querySelector('textarea');
+  const secret = sessionStorage.getItem('secret');
+
+  if (secret) {
+    const noteUrl = `${noteLink.href}#${secret}`;
+    noteLink.href = noteUrl;
+    noteLink.innerText = noteUrl;
+  }
+
+  textarea.value = noteLink.href;
+
+  button.addEventListener('click', () => {
+    textarea.select();
+    document.execCommand('copy');
+  });
+</script>
