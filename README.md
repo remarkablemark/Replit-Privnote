@@ -10,7 +10,7 @@
 - [Replit Database](https://github.com/replit/database-node)
 - [Crypto-JS](https://github.com/brix/crypto-js)
 
-Inspired by [Privnote](https://privnote.com/).
+Inspired by [Privnote](https://privnote.com/). See [blog post](https://b.remarkabl.org/3EEm4JD).
 
 ## Prerequisites
 
